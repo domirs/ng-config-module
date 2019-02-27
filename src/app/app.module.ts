@@ -1,6 +1,7 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { ConfigModule, ConfigService } from 'ng-config-module';
+import { AppConfig } from './app-config';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -8,9 +9,16 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ConfigModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: AppConfig,
+      useExisting: ConfigService
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
