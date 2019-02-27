@@ -4,6 +4,7 @@ node_js:
 script:
   - npm run build
 before_deploy:
+  - cp README.md dist/config
   - cd dist/config
 deploy:
   provider: npm
