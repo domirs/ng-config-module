@@ -3,3 +3,10 @@ node_js:
   - '10'
 script:
   - npm run build
+before_deploy:
+  - cd dist/config
+deploy:
+  provider: npm
+  skip_cleanup: true
+  on:
+    tags: true
