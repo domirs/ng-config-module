@@ -1,4 +1,4 @@
-# ng-config-module
+# ng-config-module [![Build Status](https://travis-ci.org/domirs/ng-config-module.svg?branch=master)](https://travis-ci.org/domirs/ng-config-module) 
 
 Provide configuration options through meta tags.
 
