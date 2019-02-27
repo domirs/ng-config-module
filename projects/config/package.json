@@ -1,6 +1,11 @@
 {
   "name": "ng-config-module",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "license": "MIT",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/domirs/ng-config-module.git"
+  },
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
