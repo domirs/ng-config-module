@@ -1,27 +1,78 @@
-# NgConfigModule
+# ng-config-module
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
+Provide configuration options through meta tags.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+First you need to install the npm module:
 
-## Code scaffolding
+`npm install ng-config-module`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Usage
 
-## Build
+### Import the `ConfigModule`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```angular2
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { ConfigModule, ConfigService } from 'ng-config-module';
+import { AppConfig } from './app-config';
 
-## Running unit tests
+@NgModule({
+  imports: [
+    BrowserModule,
+    ConfigModule
+  ],
+  providers: [
+    {
+      provide: AppConfig,
+      useExisting: ConfigService
+    }
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Create `AppConfig`
+```
+export class AppConfig {
+  api: string;
+}
+```
 
-## Running end-to-end tests
+### Add configurations to `index.html`
+```
+...
+<head>
+  <meta charset="utf-8">
+  <title>NgConfigModule</title>
+  <base href="/">
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="config" property="api" content="https://api.github.com">
+</head>
+...
+```
 
-## Further help
+### Use the configuration
+```
+import { Component, OnInit } from '@angular/core';
+import { AppConfig } from './app-config';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent implements OnInit {
+  api: string;
+
+  constructor(private config: AppConfig) { }
+
+  ngOnInit() {
+    this.api = this.config.api;
+  }
+}
+```

@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-config-module": [
+        "dist/config"
+      ],
+      "ng-config-module/*": [
+        "dist/config/*"
+      ]
+    }
   }
 }

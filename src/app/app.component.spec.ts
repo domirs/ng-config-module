@@ -1,4 +1,5 @@
-import { TestBed, async } from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
+import { AppConfig } from './app-config';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
@@ -7,6 +8,14 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      providers: [
+        {
+          provide: AppConfig,
+          useValue: {
+            api: 'https://api.github.com'
+          }
+        }
+      ]
     }).compileComponents();
   }));
 
@@ -16,16 +25,11 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ng-config-module'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('ng-config-module');
-  });
-
-  it('should render title in a h1 tag', () => {
+  it(`should have as api 'https://api.github.com'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to ng-config-module!');
+    const app = fixture.debugElement.componentInstance;
+    expect(app.api).toEqual('https://api.github.com');
   });
+
 });
