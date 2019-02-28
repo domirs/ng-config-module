@@ -12,7 +12,7 @@ First you need to install the npm module:
 
 ### Import the `ConfigModule`
 
-```
+```typescript
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ConfigModule, ConfigService } from 'ng-config-module';
@@ -35,14 +35,14 @@ export class AppModule { }
 ```
 
 ### Create `AppConfig`
-```
+```typescript
 export class AppConfig {
   api: string;
 }
 ```
 
 ### Add configurations to `index.html`
-```
+```html
 ...
 <head>
   <meta charset="utf-8">
@@ -57,7 +57,7 @@ export class AppConfig {
 ```
 
 ### Use the configuration
-```
+```typescript
 import { Component, OnInit } from '@angular/core';
 import { AppConfig } from './app-config';
 
