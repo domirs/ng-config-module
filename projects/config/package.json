@@ -1,6 +1,7 @@
 {
   "name": "ng-config-module",
-  "version": "1.0.1",
+  "version": "1.0.2",
+  "keywords": ["angular", "config"],
   "license": "MIT",
   "repository": {
     "type" : "git",
