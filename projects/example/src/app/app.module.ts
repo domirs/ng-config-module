@@ -5,13 +5,8 @@ import { AppConfig } from './app-config';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    ConfigModule
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, ConfigModule],
   providers: [
     {
       provide: AppConfig,
@@ -20,5 +15,4 @@ import { AppComponent } from './app.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}

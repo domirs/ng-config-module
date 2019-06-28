@@ -5,7 +5,6 @@ import { Meta } from '@angular/platform-browser';
   providedIn: 'root'
 })
 export class ConfigService {
-
   [key: string]: string;
 
   constructor(meta: Meta) {
