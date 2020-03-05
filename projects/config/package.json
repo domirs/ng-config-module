@@ -1,11 +1,14 @@
 {
   "name": "ng-config-module",
-  "version": "2.0.0",
-  "keywords": ["angular", "config"],
+  "version": "3.0.0",
+  "keywords": [
+    "angular",
+    "config"
+  ],
   "license": "MIT",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/domirs/ng-config-module.git"
+    "type": "git",
+    "url": "https://github.com/domirs/ng-config-module.git"
   },
   "peerDependencies": {
     "@angular/common": "^8.0.3",
