@@ -6,6 +6,7 @@ addons:
     sources:
       - google-chrome
     packages:
+      - dpkg
       - google-chrome-stable
 script:
   - npm run build
