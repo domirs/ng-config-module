@@ -7,6 +7,7 @@ script:
   - npm run build
   - npm run test.ci
 before_deploy:
+  - npm run prebuild
   - cp README.md LICENSE dist/config
   - cd dist/config
 deploy:
