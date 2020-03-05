@@ -18,14 +18,9 @@
             "main": "projects/example/src/main.ts",
             "polyfills": "projects/example/src/polyfills.ts",
             "tsConfig": "projects/example/tsconfig.app.json",
-            "aot": false,
-            "assets": [
-              "projects/example/src/favicon.ico",
-              "projects/example/src/assets"
-            ],
-            "styles": [
-              "projects/example/src/styles.css"
-            ],
+            "aot": true,
+            "assets": ["projects/example/src/favicon.ico", "projects/example/src/assets"],
+            "styles": ["projects/example/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -41,7 +36,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -50,6 +44,11 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ]
             }
@@ -79,27 +78,16 @@
             "polyfills": "projects/example/src/polyfills.ts",
             "tsConfig": "projects/example/tsconfig.spec.json",
             "karmaConfig": "projects/example/karma.conf.js",
-            "assets": [
-              "projects/example/src/favicon.ico",
-              "projects/example/src/assets"
-            ],
-            "styles": [
-              "projects/example/src/styles.css"
-            ],
+            "assets": ["projects/example/src/favicon.ico", "projects/example/src/assets"],
+            "styles": ["projects/example/src/styles.css"],
             "scripts": []
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "projects/example/tsconfig.app.json",
-              "projects/example/tsconfig.spec.json",
-              "projects/example/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["projects/example/tsconfig.app.json", "projects/example/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -115,6 +103,11 @@
           "options": {
             "tsConfig": "projects/config/tsconfig.lib.json",
             "project": "projects/config/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/config/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -128,16 +121,12 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "projects/config/tsconfig.lib.json",
-              "projects/config/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["projects/config/tsconfig.lib.json", "projects/config/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "example"
 }

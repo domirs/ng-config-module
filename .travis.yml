@@ -1,12 +1,8 @@
 language: node_js
 node_js:
-  - '10'
+  - "12"
 addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
+  chrome: stable
 script:
   - npm run build
   - npm run test.ci
