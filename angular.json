@@ -19,7 +19,10 @@
             "polyfills": "projects/example/src/polyfills.ts",
             "tsConfig": "projects/example/tsconfig.app.json",
             "aot": true,
-            "assets": ["projects/example/src/favicon.ico", "projects/example/src/assets"],
+            "assets": [
+              "projects/example/src/favicon.ico",
+              "projects/example/src/assets"
+            ],
             "styles": ["projects/example/src/styles.css"],
             "scripts": []
           },
@@ -78,7 +81,10 @@
             "polyfills": "projects/example/src/polyfills.ts",
             "tsConfig": "projects/example/tsconfig.spec.json",
             "karmaConfig": "projects/example/karma.conf.js",
-            "assets": ["projects/example/src/favicon.ico", "projects/example/src/assets"],
+            "assets": [
+              "projects/example/src/favicon.ico",
+              "projects/example/src/assets"
+            ],
             "styles": ["projects/example/src/styles.css"],
             "scripts": []
           }
@@ -86,7 +92,10 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["projects/example/tsconfig.app.json", "projects/example/tsconfig.spec.json"],
+            "tsConfig": [
+              "projects/example/tsconfig.app.json",
+              "projects/example/tsconfig.spec.json"
+            ],
             "exclude": ["**/node_modules/**"]
           }
         }
@@ -99,7 +108,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/config/tsconfig.lib.json",
             "project": "projects/config/ng-package.json"
@@ -121,7 +130,10 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["projects/config/tsconfig.lib.json", "projects/config/tsconfig.spec.json"],
+            "tsConfig": [
+              "projects/config/tsconfig.lib.json",
+              "projects/config/tsconfig.spec.json"
+            ],
             "exclude": ["**/node_modules/**"]
           }
         }

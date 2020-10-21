@@ -1,3 +1,3 @@
 export class AppConfig {
-  api: string;
+  api: string | undefined;
 }

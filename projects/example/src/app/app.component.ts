@@ -7,7 +7,7 @@ import { AppConfig } from './app-config';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  api: string;
+  api: string | undefined;
 
   constructor(private config: AppConfig) {}
 
