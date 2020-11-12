@@ -12,7 +12,7 @@ describe('ConfigService', () => {
     meta = TestBed.inject(Meta);
     const metaMock = {
       content: 'https://api.github.com',
-      getAttribute: property => 'api'
+      getAttribute: (property) => 'api'
     } as HTMLMetaElement;
     spyOn(meta, 'getTags').and.returnValue([metaMock]);
 

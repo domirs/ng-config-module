@@ -19,10 +19,7 @@ import { ConfigModule, ConfigService } from 'ng-config-module';
 import { AppConfig } from './app-config';
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    ConfigModule
-  ],
+  imports: [BrowserModule, ConfigModule],
   providers: [
     {
       provide: AppConfig,
@@ -31,10 +28,11 @@ import { AppConfig } from './app-config';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
 ```
 
 ### Create `AppConfig`
+
 ```typescript
 export class AppConfig {
   api: string;
@@ -42,21 +40,23 @@ export class AppConfig {
 ```
 
 ### Add configurations to `index.html`
+
 ```html
 ...
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>NgConfigModule</title>
-  <base href="/">
+  <base href="/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <meta name="config" property="api" content="https://api.github.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <meta name="config" property="api" content="https://api.github.com" />
 </head>
 ...
 ```
 
 ### Use the configuration
+
 ```typescript
 import { Component, OnInit } from '@angular/core';
 import { AppConfig } from './app-config';
@@ -64,12 +64,12 @@ import { AppConfig } from './app-config';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
   api: string;
 
-  constructor(private config: AppConfig) { }
+  constructor(private config: AppConfig) {}
 
   ngOnInit() {
     this.api = this.config.api;
