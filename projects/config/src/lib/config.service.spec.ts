@@ -24,6 +24,6 @@ describe('ConfigService', () => {
   });
 
   it('should collect config information', () => {
-    expect(service.api).toEqual('https://api.github.com');
+    expect(service['api']).toEqual('https://api.github.com');
   });
 });
