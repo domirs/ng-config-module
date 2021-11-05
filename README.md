@@ -1,4 +1,4 @@
-# ng-config-module [![Build Status](https://travis-ci.org/domirs/ng-config-module.svg?branch=master)](https://travis-ci.org/domirs/ng-config-module) [![npm version](https://badge.fury.io/js/ng-config-module.svg)](https://badge.fury.io/js/ng-config-module)
+# ng-config-module [![CI](https://github.com/domirs/ng-config-module/actions/workflows/ci.yml/badge.svg)](https://github.com/domirs/ng-config-module/actions/workflows/ci.yml) [![npm version](https://badge.fury.io/js/ng-config-module.svg)](https://badge.fury.io/js/ng-config-module)
 
 Provide configuration options through meta tags.
 
