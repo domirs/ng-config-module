@@ -25,6 +25,6 @@ jobs:
       - run: npm run prebuild
       - run: cp README.md LICENSE dist/config
       - run: npm publish
-        working-directory: dist/core
+        working-directory: dist/config
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
