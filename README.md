@@ -35,7 +35,7 @@ export class AppModule {}
 
 ```typescript
 export class AppConfig {
-  api: string;
+  api?: string;
 }
 ```
 
@@ -67,7 +67,7 @@ import { AppConfig } from './app-config';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  api: string;
+  api?: string;
 
   constructor(private config: AppConfig) {}
 
