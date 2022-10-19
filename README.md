@@ -2,6 +2,9 @@
 
 Provide configuration options through meta tags.
 
+Every property is returned as a `string`.
+`numbers` and `boolean` must be cast in the application itself.
+
 ## Installation
 
 First you need to install the npm module:
